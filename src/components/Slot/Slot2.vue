@@ -1,6 +1,8 @@
 <template>
   <div>
-    <router-view></router-view>
+    <slot-example>
+      <center>123</center>
+    </slot-example>
   </div>
 </template>
 
