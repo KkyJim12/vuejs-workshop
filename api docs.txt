@@ -1,0 +1,28 @@
+﻿http://103.74.254.140/
+
+[POST] /api/register 
+username:String
+email:String
+password:String
+password_again:String
+
+
+[POST] /api/login
+email:String
+password:String
+
+[GET] /api/product
+
+[POST] /api/product
+name:String
+price:Integer
+
+[GET] /api/product/{id}
+
+[GET] /api/product/{id}/edit
+
+[PUT] /api/product/{id}
+name:String
+price:Integer
+
+[DELETE] /api/product/{id}
