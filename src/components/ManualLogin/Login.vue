@@ -53,7 +53,7 @@ export default {
   methods: {
     Login() {
       axios
-        .post("/api/login", {
+        .post("http://103.74.254.140/api/login", {
           email: this.email,
           password: this.password
         })

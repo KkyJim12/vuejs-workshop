@@ -6,7 +6,7 @@
           <h1>Show Product</h1>
           <hr />
         </div>
-        <div class="col-md-3" v-for="show in productList">
+        <div class="col-md-3" v-for="show in productList" :key="show.id">
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">{{ show.name }}</h5>
@@ -38,7 +38,7 @@ export default {
   methods: {
     getProductList() {
       axios
-        .get("/api/product")
+        .get("http://103.74.254.140//api/product")
         .then(response => {
           this.productList = response.data;
         })

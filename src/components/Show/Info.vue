@@ -28,7 +28,7 @@ export default {
   methods: {
     getProductInfo() {
       axios
-        .get("/api/product/" + this.$route.params.id)
+        .get("http://103.74.254.140/api/product/" + this.$route.params.id)
         .then(response => {
           this.name = response.data.name;
           this.price = response.data.price;

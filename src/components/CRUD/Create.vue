@@ -38,11 +38,12 @@ export default {
   methods: {
     Create() {
       axios
-        .post("/api/product", {
+        .post("http://103.74.254.140/api/product", {
           name: this.name,
           price: this.price
         })
         .then(response => {
+          console.log(response.data);
           this.$router.push("/crud");
         })
         .catch(error => {

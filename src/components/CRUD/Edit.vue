@@ -41,7 +41,7 @@ export default {
   methods: {
     getProductInfo() {
       axios
-        .get("/api/product/" + this.$route.params.id + "/edit")
+        .get("http://103.74.254.140//api/product/" + this.$route.params.id + "/edit")
         .then(response => {
           this.name = response.data.name;
           this.price = response.data.price;
@@ -52,14 +52,17 @@ export default {
     },
     Edit() {
       axios
-        .put("/api/product/" + this.$route.params.id, {
+        .put("http://103.74.254.140//api/product/" + this.$route.params.id, {
           name: this.name,
           price: this.price
         })
         .then(response => {
+          console.log(response);
           this.$router.push("/crud");
         })
-        .catch(console.log(error.response));
+        .catch(error=>{
+          console.log(error.response);
+        });
     }
   }
 };

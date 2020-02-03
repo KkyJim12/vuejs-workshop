@@ -30,7 +30,7 @@ export default {
   methods: {
     getProductList() {
       axios
-        .get("/api/product")
+        .get("http://103.74.254.140/api/product")
         .then(response => {
           this.product = response.data;
         })
@@ -40,7 +40,7 @@ export default {
     },
     Delete(id) {
       axios
-        .delete("/api/product/" + id)
+        .delete("http://103.74.254.140/api/product/" + id)
         .then(response => {
           this.product = response.data;
         })

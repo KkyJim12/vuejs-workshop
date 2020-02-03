@@ -81,7 +81,7 @@ export default {
   methods: {
     Register() {
       axios
-        .post("/api/register", {
+        .post("http://103.74.254.140/api/register", {
           username: this.username,
           email: this.email,
           password: this.password,
