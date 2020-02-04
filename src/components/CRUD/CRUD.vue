@@ -5,12 +5,26 @@
         <h1>CRUD Workshop</h1>
         <router-link to="/create" class="btn btn-success">Create</router-link>
         <hr />
-        <vuetable
-          ref="vuetable"
-          api-url="/api/product"
-          :fields="['name', 'price']"
-          data-path=""
-        ></vuetable>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">ชื่อสินค้า</th>
+              <th scope="col">ราคา</th>
+              <th scope="col">แก้ไข</th>
+              <td scope="col">ลบ</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="show in product" :key="show.id">
+              <th scope="row">1</th>
+              <td>{{show.name}}</td>
+              <td>{{show.price}}</td>
+              <td><router-link :to="'/'+show.id+'/edit'" class="btn btn-warning">แก้ไข</router-link></td>
+              <td><button class="btn btn-danger">ลบ</button></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

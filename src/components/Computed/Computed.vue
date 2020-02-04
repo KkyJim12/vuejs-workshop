@@ -7,16 +7,12 @@
           <input v-model="search" type="text" placeholder="Search By Name" />
           <hr />
         </div>
-        <div class="col-md-3" v-for="show in Filter">
+        <div class="col-md-3" v-for="show in Filter" :key="show.id">
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">{{ show.name }}</h5>
               <p class="card-text">{{ show.price }}</p>
-              <router-link
-                :to="'/show/info/' + show.id"
-                class="btn btn-primary form-control"
-                >Info</router-link
-              >
+              <router-link :to="'/show/info/' + show.id" class="btn btn-primary form-control">Info</router-link>
             </div>
           </div>
         </div>
@@ -26,6 +22,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   mounted() {
     this.getProductList();
